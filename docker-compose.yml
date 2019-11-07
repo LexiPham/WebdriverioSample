@@ -1,0 +1,22 @@
+# To execute this docker-compose yml file use `docker-compose -f docker-compose.yml up`
+# Add the `-d` flag at the end for detached execution
+# https://github.com/zalando/zalenium
+version: "3"
+services:
+  zalenium:
+    image: dosel/zalenium
+    container_name: zalenium
+    privileged: true
+    tty: true
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./videos:/home/seluser/videos"
+    ports:
+      - "4444:4444"
+    command: >
+      start --timeZone ${TIMEZONE}
+            --screenWidth ${SCREENWIDTH} --screenHeight ${SCREENHEIGHT}
+            --maxTestSessions ${MAXTESTSESSIONS}
+            --desiredContainers ${CONTAINERS}
+            --videoRecordingEnabled ${VIDEORECORDINGENABLE}
+            --seleniumImageName elgalu/selenium:latest
