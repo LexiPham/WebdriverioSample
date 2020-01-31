@@ -33,7 +33,6 @@ jobs:
           name: Start Selenium
           command: |
             ./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start
-          background: true
 
       - run: npm install
 
