@@ -56,7 +56,7 @@ exports.config = {
         browserName: 'chrome',
 
         'goog:chromeOptions': {
-            args: ['start-maximized','disable-dev-shm-usage','--headless','--no-sandbox']
+            args: ['start-maximized','disable-dev-shm-usage','headless','no-sandbox']
         }
     }],
     //
