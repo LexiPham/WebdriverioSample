@@ -28,7 +28,7 @@ jobs:
             - v1-dependencies-
             
       - run: sudo apt-get install default-jdk
-      
+      - run: npm update
       - run: npm install
 
       - save_cache:
