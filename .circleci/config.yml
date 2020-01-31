@@ -8,8 +8,12 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:7.10
-      - image: elgalu/selenium:latest
-      - image: dosel/zalenium:latest
+      - image: selenium/hub
+        name: hub
+      - image: selenium/node-firefox
+        environment:
+          HUB_PORT_4444_TCP_ADDR: hub
+          HUB_PORT_4444_TCP_PORT: 4444
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -28,7 +32,6 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
             
-      - run: docker run --rm -ti --name zalenium -d -p 4444:4444 -e PULL_SELENIUM_IMAGE=true -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/videos:/home/seluser/videos --privileged dosel/zalenium start
       - run: npm install
 
       - save_cache:
