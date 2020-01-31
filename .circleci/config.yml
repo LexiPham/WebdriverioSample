@@ -28,6 +28,8 @@ jobs:
             - v1-dependencies-
             
       - run: sudo apt-get install default-jdk
+      
+      - run: ./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start
 
       - run: npm install
 
