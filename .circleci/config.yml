@@ -26,8 +26,8 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-      - run: apt-get update && apt-get upgrade
-      - run: apt-get install default-jdk
+      - run: sudo apt-get update && apt-get upgrade
+      - run: sudo apt-get install default-jdk
       
       - run: npm install
 
