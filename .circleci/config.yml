@@ -30,9 +30,15 @@ jobs:
       - run: sudo apt-get install default-jdk
       
       - run:
+          name: Install Selenium
+          command: |
+            ./node_modules/.bin/selenium-standalone install
+            
+      - run:
           name: Start Selenium
           command: |
-            ./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start
+            ./node_modules/.bin/selenium-standalone install && ./node_modules/.bin/selenium-standalone start         
+            background: true
 
       - run: npm install
 
