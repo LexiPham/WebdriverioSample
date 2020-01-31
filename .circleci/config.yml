@@ -34,4 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: ./node_modules/.bin/wdio wdio.conf.js -l 'silent'
+      - run: npx wdio
