@@ -20,7 +20,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
             
-      # Install Chrome.
+      # Install Chrome
       - run:
           name: Install Chrome
           command: |
@@ -30,7 +30,10 @@ jobs:
             apt-get -y install google-chrome-stable
       
       # Install dependences
-      - run: npm install
+      - run:
+          name: Install dependences
+          command: |
+            npm install
       
       - save_cache:
           paths:
