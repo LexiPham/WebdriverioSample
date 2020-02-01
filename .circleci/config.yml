@@ -41,7 +41,7 @@ jobs:
       - run:
           name: Checking if chrome is insalled
           command: |
-            ls /usr/bin/google-chrome      
+            which google-chrome   
       
       
       # Install dependences
