@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: lexipham/node-java-browsers
+      - image: lexipham/node-java-chrome
 
     working_directory: ~/repo
 
