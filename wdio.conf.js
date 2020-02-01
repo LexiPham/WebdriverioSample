@@ -6,11 +6,10 @@ exports.config = {
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
-    runner: 'local',
+    // runner: 'local',
     hostname: 'localhost',
     port: 4444,
-    // path: '/wd/hub',
-    path: '/',
+    path: '/wd/hub',
     //
     // Override default path ('/wd/hub') for chromedriver service.
     // path: '/',
@@ -107,8 +106,27 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-     services: ['chromedriver'],
+    // services: ['chromedriver'],
     // services: ['selenium-standalone'],
+      services: ['selenium-standalone'],
+      seleniumInstallArgs: {
+        logger: console.log,
+        drivers: {
+          chrome: {
+            version: '2.29',
+            arch: process.arch,
+            baseURL: 'https://chromedriver.storage.googleapis.com',
+          },
+        },
+      },
+      seleniumArgs: {
+        logger: console.log,
+        drivers: {
+          chrome: {
+            version: '2.29',
+          },
+        },
+      },
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
