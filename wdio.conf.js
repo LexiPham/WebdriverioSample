@@ -110,24 +110,24 @@ exports.config = {
     // services: ['selenium-standalone'],
       services: ['selenium-standalone'],
       seleniumLogs: 'logs',
-      seleniumInstallArgs: {
-        logger: console.log,
-        drivers: {
-          chrome: {
-            version: '2.46',
-            arch: process.arch,
-            baseURL: 'https://chromedriver.storage.googleapis.com',
-          },
-        },
-      },
-      seleniumArgs: {
-        logger: console.log,
-        drivers: {
-          chrome: {
-            version: '2.46',
-          },
-        },
-      },
+//       seleniumInstallArgs: {
+//         logger: console.log,
+//         drivers: {
+//           chrome: {
+//             version: '2.46',
+//             arch: process.arch,
+//             baseURL: 'https://chromedriver.storage.googleapis.com',
+//           },
+//         },
+//       },
+//       seleniumArgs: {
+//         logger: console.log,
+//         drivers: {
+//           chrome: {
+//             version: '2.46',
+//           },
+//         },
+//       },
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
