@@ -27,10 +27,12 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
             
-#       - run: sudo apt-get install default-jdk
       # Install dependencies.
       - run: sudo apt-get update
       - run: sudo apt-get install -y unzip openjdk-8-jre-headless xvfb libxi6 libgconf-2-4
+      - run: sudo npm cache clean -f
+      - run: sudo npm install -g n
+      - run: sudo n stable
       
       # Install Chrome.
       - run: sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add
@@ -47,16 +49,6 @@ jobs:
       # Install dependences
       - run: npm install
       
-#       - run:
-#           name: Install Selenium
-#           command: |
-#             ./node_modules/.bin/selenium-standalone install         
-#       - run:
-#           name: Start Selenium
-#           command: |
-#             ./node_modules/.bin/selenium-standalone start         
-#           background: true
-
       - save_cache:
           paths:
             - node_modules
