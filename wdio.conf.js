@@ -6,7 +6,7 @@ exports.config = {
     //
     // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
     // on a remote machine).
-//     runner: 'local',
+    runner: 'local',
     hostname: 'localhost',
     port: 4444,
     path: '/wd/hub',
@@ -55,10 +55,9 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
 
-        'goog:chromeOptions': {
-            args: ['start-maximized','disable-dev-shm-usage','headless','no-sandbox'],
-            binary: './node_modules/selenium-standalone/.selenium/chromedriver/2.43-x64-chromedriver'
-        }
+//         'goog:chromeOptions': {
+//             args: ['start-maximized','disable-dev-shm-usage','headless','no-sandbox'],
+//         }
     }],
     //
     // ===================
