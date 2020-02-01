@@ -113,7 +113,7 @@ exports.config = {
         logger: console.log,
         drivers: {
           chrome: {
-            version: '2.29',
+            version: '2.8',
             arch: process.arch,
             baseURL: 'https://chromedriver.storage.googleapis.com',
           },
@@ -123,7 +123,7 @@ exports.config = {
         logger: console.log,
         drivers: {
           chrome: {
-            version: '2.29',
+            version: '2.8',
           },
         },
       },
