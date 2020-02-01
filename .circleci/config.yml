@@ -38,6 +38,12 @@ jobs:
       - run: sudo apt-get -y update
       - run: sudo apt-get -y install google-chrome-stable
       
+      - run:
+          name: Checking if chrome is insalled
+          command: |
+            ls /usr/bin/google-chrome      
+      
+      
       # Install dependences
       - run: npm install
       
