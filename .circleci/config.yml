@@ -6,7 +6,6 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: timbru31/java-node
 
     working_directory: ~/repo
@@ -20,22 +19,15 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-#       - run:
-#           name: Checking if chrome is insalled
-#           command: |
-#             which google-chrome   
             
       # Install Chrome.
-      - run: curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
-      - run: echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
-      - run: apt-get -y update
-      - run: apt-get -y install google-chrome-stable
-      
       - run:
-          name: Checking if chrome is insalled
+          name: Install Chrome
           command: |
-            which google-chrome   
-      
+            curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+            echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+            apt-get -y update
+            apt-get -y install google-chrome-stable
       
       # Install dependences
       - run: npm install
