@@ -124,7 +124,7 @@ exports.config = {
         logger: console.log,
         drivers: {
           chrome: {
-            version: '2.4',
+            version: '2.43',
           },
         },
       },
