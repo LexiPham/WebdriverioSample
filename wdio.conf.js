@@ -109,11 +109,12 @@ exports.config = {
     // services: ['chromedriver'],
     // services: ['selenium-standalone'],
       services: ['selenium-standalone'],
+      seleniumLogs: 'logs',
       seleniumInstallArgs: {
         logger: console.log,
         drivers: {
           chrome: {
-            version: '2.8',
+            version: '80.0.3987.16',
             arch: process.arch,
             baseURL: 'https://chromedriver.storage.googleapis.com',
           },
@@ -123,7 +124,7 @@ exports.config = {
         logger: console.log,
         drivers: {
           chrome: {
-            version: '2.8',
+            version: '80.0.3987.16',
           },
         },
       },
