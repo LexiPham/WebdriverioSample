@@ -28,7 +28,8 @@ jobs:
             - v1-dependencies-
             
       - run: sudo apt-get install default-jdk
-   
+      - run: npm install
+      
 #       - run:
 #           name: Install Selenium
 #           command: |
@@ -39,8 +40,6 @@ jobs:
           command: |
             ./node_modules/.bin/selenium-standalone start         
           background: true
-
-      - run: npm install
 
       - save_cache:
           paths:
