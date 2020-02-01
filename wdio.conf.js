@@ -55,9 +55,10 @@ exports.config = {
         maxInstances: 5,
         browserName: 'chrome',
 
-//         'goog:chromeOptions': {
-//             args: ['start-maximized','disable-dev-shm-usage','headless','no-sandbox']
-//         }
+        'goog:chromeOptions': {
+            args: ['start-maximized','disable-dev-shm-usage','headless','no-sandbox'],
+            binary: './node_modules/selenium-standalone/.selenium/chromedriver/2.43-x64-chromedriver'
+        }
     }],
     //
     // ===================
