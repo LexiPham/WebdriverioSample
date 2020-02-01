@@ -26,10 +26,10 @@ jobs:
 #             which google-chrome   
             
       # Install Chrome.
-      - run: sudo curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add
-      - run: sudo echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
-      - run: sudo apt-get -y update
-      - run: sudo apt-get -y install google-chrome-stable
+      - run: curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add
+      - run: echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
+      - run: apt-get -y update
+      - run: apt-get -y install google-chrome-stable
       
       - run:
           name: Checking if chrome is insalled
